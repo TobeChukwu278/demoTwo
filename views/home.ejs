@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -135,6 +136,7 @@
     </style>
 </head>
 
+
 <body class="homeBody">
     <header>
         <div class="container">
@@ -145,7 +147,7 @@
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#">Cart</a></li>
+                    <li><a href="/cart"><i class="fas fa-shopping-cart"></i> Cart</a></li>
                 </ul>
             </nav>
         </div>
@@ -167,25 +169,45 @@
                     <img src="product1.jpg" alt="Product 1">
                     <h3>Product 1</h3>
                     <p>$19.99</p>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <form action="/add-to-cart" method="post">
+                        <input type="hidden" name="productId" value="1">
+                        <input type="hidden" name="productName" value="Product 1">
+                        <input type="hidden" name="productPrice" value="19.99">
+                        <button type="submit" class="btn">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="product">
                     <img src="product2.jpg" alt="Product 2">
                     <h3>Product 2</h3>
                     <p>$29.99</p>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <form action="/add-to-cart" method="post">
+                        <input type="hidden" name="productId" value="2">
+                        <input type="hidden" name="productName" value="Product 2">
+                        <input type="hidden" name="productPrice" value="29.99">
+                        <button type="submit" class="btn">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="product">
                     <img src="product3.jpg" alt="Product 3">
                     <h3>Product 3</h3>
                     <p>$39.99</p>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <form action="/add-to-cart" method="post">
+                        <input type="hidden" name="productId" value="3">
+                        <input type="hidden" name="productName" value="Product 3">
+                        <input type="hidden" name="productPrice" value="39.99">
+                        <button type="submit" class="btn">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="product">
                     <img src="product4.jpg" alt="Product 4">
                     <h3>Product 4</h3>
                     <p>$49.99</p>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <form action="/add-to-cart" method="post">
+                        <input type="hidden" name="productId" value="4">
+                        <input type="hidden" name="productName" value="Product 4">
+                        <input type="hidden" name="productPrice" value="49.99">
+                        <button type="submit" class="btn">Add to Cart</button>
+                    </form>
                 </div>
             </div>
         </div>
