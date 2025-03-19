@@ -1,21 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const connect = mongoose.connect("mongodb+srv://astrolix278:i6bCj8BfasQhl83R@democluster.7dbf7.mongodb.net/?retryWrites=true&w=majority&appName=demoCluster", {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 60000 // Increase timeout to 60 seconds
-});
-
-// Check if database is connected
-connect.then(() => {
-    console.log('Database connected');
-}).catch(() => {
-    console.log("Database not connected");
-});
 
 // Create a schema
-const loginSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -27,7 +15,26 @@ const loginSchema = new mongoose.Schema({
     }
 });
 
-// collection part
-const collection = new mongoose.model("demoCluster", loginSchema);
+// Create a schema for products
+const productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    }
+});
 
-export default collection;
+
+
+
+const User = mongoose.model("User", userSchema);
+const Product = mongoose.model("Product", productSchema);
+
+export { User, Product };
